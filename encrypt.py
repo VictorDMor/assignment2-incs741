@@ -16,9 +16,10 @@ def rfc_encrypt(plaintext: str, key: int, reps: int) -> str:
     for rail in rails:
         ciphertext += ''.join(rail)
     
+    print(f"Rep {reps}: {ciphertext}")
     if reps == 1:
         return ciphertext
     return rfc_encrypt(ciphertext, key, reps-1)
 
 
-print(rfc_encrypt("HELLO WORLD", 3, 1))
+print(rfc_encrypt("CRYPTOLOGY IS THE PRACTICE AND STUDY OF TECHNIQUES FOR SECURE COMMUNICATION IN THE PRESENCE OF THIRD PARTIES CALLED ADVERSARIES.", 4, 5))
